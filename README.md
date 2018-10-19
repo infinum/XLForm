@@ -8,6 +8,12 @@ By [XMARTLABS](http://xmartlabs.com).
 
 **If you are working in Swift then you should have a look at [Eureka], a complete re-design of XLForm in Swift.** *Do not panic, we will continue maintaining and improving XLForm, obj-c rocks!!*
 
+
+
+## Fork note
+
+When isHidden or isDisabledof one rowDescriptor depends on another rowDescriptor, the contents of revaluateHidden and revaluateDisabled may change in the same time while executingfor loops, which causes the crash.
+
 Purpose
 --------------
 
