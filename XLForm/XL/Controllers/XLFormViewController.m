@@ -314,8 +314,13 @@
 
 -(void)updateAfterDependentRowChanged:(XLFormRowDescriptor *)formRow
 {
-    NSMutableArray* revaluateHidden   = self.form.rowObservers[[formRow.tag formKeyForPredicateType:XLPredicateTypeHidden]];
-    NSMutableArray* revaluateDisabled = self.form.rowObservers[[formRow.tag formKeyForPredicateType:XLPredicateTypeDisabled]];
+    
+    /// When isHidden or isDisabledof one rowDescriptor depends on another rowDescriptor,
+    /// the contents of revaluateHidden and revaluateDisabled may change in the same time while executingfor loops,
+    /// which causes the crash.
+
+    NSMutableArray* revaluateHidden   = [self.form.rowObservers[[formRow.tag formKeyForPredicateType:XLPredicateTypeHidden]] copy];
+    NSMutableArray* revaluateDisabled = [self.form.rowObservers[[formRow.tag formKeyForPredicateType:XLPredicateTypeDisabled]] copy];
     for (id object in revaluateDisabled) {
         if ([object isKindOfClass:[NSString class]]) {
             XLFormRowDescriptor* row = [self.form formRowWithTag:object];
