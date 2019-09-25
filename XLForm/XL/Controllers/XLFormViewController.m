@@ -566,7 +566,9 @@
 {
     NSIndexPath * indexPath = [self.form indexPathOfFormRow:formRow];
     if (indexPath){
+        [UIView setAnimationsEnabled:NO];
         [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        [UIView setAnimationsEnabled:YES];
     }
 }
 
