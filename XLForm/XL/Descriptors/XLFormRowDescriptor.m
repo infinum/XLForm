@@ -99,6 +99,7 @@ CGFloat XLFormRowInitialHeight = -2;
         _isDirtyHidePredicateCache = YES;
         _hidePredicateCache = nil;
         _height = XLFormRowInitialHeight;
+        _preferredStatusBarStyle = UIStatusBarStyleDefault;
         [self addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:0];
         [self addObserver:self forKeyPath:@"disablePredicateCache" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:0];
         [self addObserver:self forKeyPath:@"hidePredicateCache" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:0];

@@ -73,6 +73,12 @@
     [self.tableView registerClass:[XLFormRightDetailCell class] forCellReuseIdentifier:CELL_REUSE_IDENTIFIER];
 }
 
+#pragma mark - Overrides
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return self.rowDescriptor.preferredStatusBarStyle;
+}
 
 #pragma mark - UITableViewDataSource
 
