@@ -55,6 +55,7 @@ typedef void(^XLOnChangeBlock)(id __nullable oldValue,id __nullable newValue,XLF
 @property (nullable) Class valueTransformer;
 @property UITableViewCellStyle cellStyle;
 @property (nonatomic) CGFloat height;
+@property (nonatomic, assign) UIStatusBarStyle preferredStatusBarStyle;
 
 @property (copy, nullable) XLOnChangeBlock onChangeBlock;
 @property BOOL useValueFormatterDuringInput;
