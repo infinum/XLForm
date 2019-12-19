@@ -10,12 +10,6 @@ By [XMARTLABS](http://xmartlabs.com).
 
 We are not implementing any new features for XLForm anymore. However, if a critical issue arises we will fix it.
 
-
-
-## Fork note
-
-When isHidden or isDisabledof one rowDescriptor depends on another rowDescriptor, the contents of revaluateHidden and revaluateDisabled may change in the same time while executingfor loops, which causes the crash.
-
 Purpose
 --------------
 
