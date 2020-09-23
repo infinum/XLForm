@@ -58,6 +58,9 @@
     [super configure];
     
     UIDatePicker *datePicker = [UIDatePicker autolayoutView];
+    if (@available(iOS 14.0, *)) {
+        [datePicker setPreferredDatePickerStyle:UIDatePickerStyleWheels];
+    }
     [datePicker addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
     [self.contentView addSubview:datePicker];
     _datePicker = datePicker;
